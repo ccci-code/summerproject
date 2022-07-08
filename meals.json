@@ -1,1 +1,1 @@
-{"meals":{"main":"pizza","sides":"rolls"}}
+{"meals":{"main":["pizza","hamburgers","soup","tacos"],"sides":"rolls"}}
