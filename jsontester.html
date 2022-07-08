@@ -1,0 +1,54 @@
+<html>
+<script>
+    var mealsSha = ""; //the file sha code needed to update the file in Github
+    const accessToken = "";//enter access code here
+
+    //function to upload JSON parsed from textarea
+    async function upload() {
+        var url = "https://api.github.com/repos/ccci-code/summerproject/contents/meals.json";
+        let mealText = document.getElementById("meals").value.trim();
+        const json = JSON.stringify(JSON.parse(mealText));
+        const message = { "message": "my commit message", "committer": { "name": "ccci-code", "email": "monitor@ccc-i.com" }, "sha": mealsSha, "content": btoa(json) };
+        const options = {
+            method: 'PUT',
+            body: JSON.stringify(message),
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/vnd.github+json',
+                'Authorization': 'Bearer ' + accessToken
+            }
+        }
+        // send POST request
+        fetch(url, options)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                window.location.reload();
+            }
+            );
+    }
+
+    async function init() {
+        var r = Math.random();//avoid loading from browser cache
+        const url = "https://api.github.com/repos/ccci-code/summerproject/contents/meals.json?" + r;
+        const response = await fetch(url);
+        try {
+            const data = await response.json();
+            mealsSha = data.sha;
+            var dv = document.getElementById("contents");
+            if (dv) dv.innerHTML = "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
+            document.getElementById("meals").value = JSON.stringify(JSON.parse(atob(data.content)), null, 2);
+        } catch (e) {console.log(e); }
+    }
+</script>
+
+<body onload="init()">
+    <textarea id="meals" width="600" height="800" style="width: 100%; max-width: 900px;max-height:500px;height:100%">
+    </textarea>
+    <br><br>
+    <button onclick="upload()">Submit</button>
+    <br>
+    <div id="contents"></div>
+</body>
+
+</html>
