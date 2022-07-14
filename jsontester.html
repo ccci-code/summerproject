@@ -1,5 +1,6 @@
 <html>
 <script>
+    var meals;
     var mealsSha = ""; //the file sha code needed to update the file in Github
     const accessToken = "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";//enter access code here
 
@@ -33,16 +34,22 @@
         const url = "https://api.github.com/repos/ccci-code/summerproject/contents/meals.json?" + r;
         const response = await fetch(url);
         try {
-            const data = await response.json();
-            mealsSha = data.sha;
+            meals = await response.json();
+            mealsSha = meals.sha;
             var dv = document.getElementById("contents");
-            if (dv) dv.innerHTML = "<pre>" + JSON.stringify(data, null, 2) + "</pre>";
-            document.getElementById("meals").value = JSON.stringify(JSON.parse(atob(data.content)), null, 2);
+            if (dv) dv.innerHTML = "<pre>" + JSON.stringify(meals, null, 2) + "</pre>";
+            document.getElementById("meals").value = JSON.stringify(JSON.parse(atob(meals.content)), null, 2);
         } catch (e) {console.log(e); }
     }
+    //use random numbers to select a main,side, and vegetable from the "meals" JSON object loaded in init()
+    function randomMeal(){
+        
+    }
+    
 </script>
 
 <body onload="init()">
+    <button onclick="randomMeal()">Select random meal</button><br>
     <textarea id="meals" width="600" height="800" style="width: 100%; max-width: 900px;max-height:500px;height:100%">
     </textarea>
     <br><br>
