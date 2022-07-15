@@ -1,1 +1,18 @@
-{"meals":{"main":["pizza","hamburgers","soup","tacos"],"sides":["rolls","french fries","bread sticks"],"vegetables":["beans","corn","broccoli","carrots"]}}
+{"meals":
+ let main = Math.floor(Math.random()) * 4:
+  let 1 = "pizza";
+  let 2 = "hamburgers";
+  let 3 = "soup";
+  let 4 = "tacos";
+ {"main":["pizza","hamburgers","soup","tacos"]};
+ let sides = Math.floor(Math.random()) * 3:
+  let 1 = "rolls";
+  let 2 = "french fries";
+  let 3 = "bread sticks";
+ {"sides":["rolls","french fries","bread sticks"]}
+ let vegetables = Math.floor(Math.random()) * 4:
+  let 1 = "beans";
+  let 2 = "corn";
+  let 3 = "broccoli";
+  let 4 = "carrots";
+{"vegetables":["beans","corn","broccoli","carrots"]}}
