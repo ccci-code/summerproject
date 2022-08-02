@@ -83,7 +83,7 @@ function createMenu() {
             "Side dish" +
             "<select>"+sides+"</select>" +
             "</label><br>";
-        r = randomIntFromInterval(1, meals.vegetable.length);
+        r = randomIntFromInterval(1, meals.vegetables.length);
         var vegetable="";
         //write a loop through meals.vegetable, populate the select element, and select the random item as the selected item        
         meal +=
