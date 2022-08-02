@@ -1,2 +1,32 @@
 <html>
-  Home page
+<title>Meal generator</title>
+<script src="meals.js" type="text/javascript"></script>
+<style>
+  .mealsel {
+    flex: auto;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .cell {
+    border: 1px solid gray;
+  }
+</style>
+
+<body onload="init()">
+  <h1>Select a main, side, and vegetable</h1>
+  <label>
+    Number of days
+    <input type="number" min="1" max="30" id="nummeals" value="1">
+  </label>
+  <button onclick="createMenu()">Go</button>&nbsp;
+  <button onclick="clearMenu()">Clear</button>
+  <br><br>
+  <div id="mealcalendar" class="grid">
+
+  </div>
+</body>
