@@ -29,7 +29,7 @@ async function upload() {
 
 async function init() {
     var r = Math.random();//avoid loading from browser cache
-    const url = "https://api.github.com/repos/ccci-code/summerproject/contents/meals.json?" + r;
+    const url = "https://raw.githubusercontent.com/ccci-code/summerproject/main/meals.json?" + r;
     const response = await fetch(url);
     try {
         var mealsJson = await response.json();
