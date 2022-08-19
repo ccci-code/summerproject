@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+.mealsel {
+    flex: auto;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+}
+.cell {
+    border: 1px solid gray;
+}
+
+.title{
+    font-family: 'Aboreto', cursive;
+    text-align: center;
+    margin: 50px;
+}
+.label{
+    font-family: 'Quicksand', sans-serif;
+}
+.button{
+    font-family: 'Quicksand', sans-serif;
+}
+.dish{
+    margin-left: 20px;
+    font-family: 'Quicksand', sans-serif;
+}
