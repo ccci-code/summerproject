@@ -73,23 +73,23 @@ function createMenu() {
         //write a loop through meals.main, populate the select element, and select the random item as the selected item
 
 
-        meal += "<label>" +
-            "Main dish" +
+        meal += "<label class='dish'>" +
+            "Main Dish" +
             "<select>"+main+"</select>" +
             "</label><br>";
         r = randomIntFromInterval(1, meals.sides.length);
         var sides="";
         //write a loop through meals.sides, populate the select element, and select the random item as the selected item        
         meal +=
-            "<label>" +
-            "Side dish" +
+            "<label class='dish'>" +
+            "Side Dish" +
             "<select>"+sides+"</select>" +
             "</label><br>";
         r = randomIntFromInterval(1, meals.vegetables.length);
         var vegetable="";
         //write a loop through meals.vegetable, populate the select element, and select the random item as the selected item        
         meal +=
-            "<label>" +
+            "<label class='dish'>" +
             "Vegetable" +
             "<select>"+vegetable+"</select>" +
             "</label></div>";
